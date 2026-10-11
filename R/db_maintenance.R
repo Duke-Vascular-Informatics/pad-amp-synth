@@ -459,7 +459,7 @@ create_vocab_synonyms <- function(cfg, target_schema, shared_vocab_schema = "omo
 # WHY THIS EXISTS. omop_etl_maps is a single object shared by every repo on the
 # instance, but the code that builds it is vendored into each repo's own copy of
 # this file and those copies drift (measured 2026-08-07: the runner had drifted
-# ~125 lines between the template and pad-amp-dispo-synth). Keying rebuilds on
+# ~125 lines between the template and pad-amp-synth). Keying rebuilds on
 # the vocabulary version alone is therefore not enough — two repos can hold
 # different builder logic while the vocabulary sits still, and whichever runs
 # first would silently impose its maps on the other.

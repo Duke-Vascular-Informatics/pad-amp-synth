@@ -4,7 +4,7 @@ message: >
   using the metadata below.
 
 title: >
-  pad-amp-dispo-synth: A Synthea Module and OMOP ETL Producing a Synthetic CDM of
+  pad-amp-synth: A Synthea Module and OMOP ETL Producing a Synthetic CDM of
   Major Lower Extremity Amputation Patients
 
 authors:
@@ -17,8 +17,8 @@ authors:
 version: "1.0.0"
 date-released: "2026-10-02"
 
-repository-code: "https://github.com/Duke-Vascular-Informatics/pad-amp-dispo-synth"
-url: "https://github.com/Duke-Vascular-Informatics/pad-amp-dispo-synth"
+repository-code: "https://github.com/Duke-Vascular-Informatics/pad-amp-synth"
+url: "https://github.com/Duke-Vascular-Informatics/pad-amp-synth"
 
 license: GPL-2.0-only
 
