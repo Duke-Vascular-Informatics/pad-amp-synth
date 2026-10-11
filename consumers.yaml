@@ -39,5 +39,3 @@ consumers:
     target_id: 9100011
     outcome_ids: [9100001]
     discharge_disposition_check: true
-    expected_empty: [9100026]   # Dependent Functional Status (ADL dependence): not in the pad_amp_dispo module
-                                # or any built-in Synthea module, so 0 people. TODO: add it to the module.
