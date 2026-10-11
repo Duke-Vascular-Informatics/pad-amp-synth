@@ -41,7 +41,7 @@ analysis lives in the consuming study repos.
 ### Schema naming (important)
 
 `cdm_schema` is pinned to **`omop_synth_pad_amp_dispo`** (NOT `..._synth`) even though
-this repo is `pad-amp-dispo-synth`. That physical schema is registered in
+this repo is `pad-amp-synth`. That physical schema is registered in
 the workspace's `synthetic_data/registry.yaml` (format: [charon's synthetic_data README](https://github.com/Duke-Vascular-Informatics/charon/blob/main/synthetic_data/README.md)) (dataset `id: pad_amp`) and is consumed by the studies listed in
 `consumers.yaml` through view-overlays — through an overlay schema, never the bare name
 directly, which is what made the 2026-07-31
@@ -66,7 +66,7 @@ remote, created from the `synthea-omop-template` lineage (bootstrapped from
 
 | Remote | URL | What to push |
 |--------|-----|--------------|
-| `origin` | `https://github.com/Duke-Vascular-Informatics/pad-amp-dispo-synth.git` | Full repository |
+| `origin` | `https://github.com/Duke-Vascular-Informatics/pad-amp-synth.git` | Full repository |
 
 ```bash
 BRANCH=$(gh api user --jq .login)

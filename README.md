@@ -1,4 +1,9 @@
-# pad-amp-dispo-synth — Synthetic Data Generation
+# pad-amp-synth — Synthetic Data Generation
+
+> Formerly `pad-amp-dispo-synth`. Renamed 2026-10-11 because the dataset (`pad_amp`) describes the
+> amputation *population*, not one outcome family; disposition outcomes are now one of several. GitHub
+> redirects the old URL and release-asset links. The physical schemas (`omop_synth_pad_amp_dispo`, `omop_synth_pad_amp_v2`)
+> and the module file `pad_amp_dispo.json` are unchanged for now.
 
 **Data-generation-only repository.** This is **not** a study. It exists solely to produce a
 synthetic OMOP CDM v5.4 dataset and register it for reuse by real study repositories. It has
@@ -55,7 +60,7 @@ After a successful Step 5/6 run, update the dataset's `generation_params` and
 ## Repository structure
 
 ```
-pad-amp-dispo-synth/
+pad-amp-synth/
   consumers.yaml              ← the Strategus studies that use this dataset (defines what it must contain)
   study_params.yaml           ← identity, schemas and database description
   config.R                    ← infrastructure settings (no edits needed)
