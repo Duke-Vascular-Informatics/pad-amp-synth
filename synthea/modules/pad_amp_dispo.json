@@ -818,15 +818,18 @@
     "Cov_Falls_Onset": {
       "type": "ConditionOnset",
       "remarks": [
-        "SNOMED-CT 161898004 'Falls' [vocab query — 2026-07-05].",
-        "Maps to Observation domain in OMOP (Z91.81 history of falls).",
-        "Verify: Rscript scripts/concept_lookup.R 'history of falls' Observation"
+        "SNOMED-CT 1912002 'Fall' -> OMOP 436583 (Observation) [vocab query — 2026-10-11].",
+        "REPLACES 161898004 'Falls' (OMOP 4059015), which is NOT in the VA-FI Falls concept set",
+        "(pad-amp-ed-desc cohort 1797962), so that cohort had 0 people in dataset v2 even though",
+        "the module emitted ~150 Falls rows. 1797962 reads the Observation domain only, so the",
+        "Condition-domain falling-injury code below does not count toward it.",
+        "ETL routes this Observation-domain SNOMED condition into the observation table."
       ],
       "codes": [
         {
           "system": "SNOMED-CT",
-          "code": "161898004",
-          "display": "Falls [vocab query — OMOP 443596]"
+          "code": "1912002",
+          "display": "Fall [vocab query — OMOP 436583]"
         }
       ],
       "direct_transition": "Cov_FallInjury_Check"
@@ -1249,15 +1252,17 @@
     "Cov_WeightLoss_Onset": {
       "type": "ConditionOnset",
       "remarks": [
-        "SNOMED-CT 89362005 'Weight loss' [vocab query — 2026-07-05].",
-        "Maps to Observation domain in OMOP (R63.4 / R63.6 ICD-10).",
-        "Verify: Rscript scripts/concept_lookup.R 'weight loss' Observation"
+        "SNOMED-CT 267024001 'Abnormal weight loss' -> OMOP 435928 (Observation) [vocab query — 2026-10-11].",
+        "REPLACES 448765001 'Unintentional weight loss' (OMOP 40491502), which is NOT in the VA-FI",
+        "weight-loss concept set (pad-amp-ed-desc cohort 1797974: Abnormal weight loss 435928 and",
+        "Underweight 435372 plus descendants), so that cohort had 0 people in dataset v2 and the",
+        "module coverage check reported NOT_COVERED."
       ],
       "codes": [
         {
           "system": "SNOMED-CT",
-          "code": "448765001",
-          "display": "Unintentional weight loss [vocab query — OMOP 40491502]"
+          "code": "267024001",
+          "display": "Abnormal weight loss [vocab query — OMOP 435928]"
         }
       ],
       "direct_transition": "Cov_ChronicPain_Check"
@@ -1524,6 +1529,57 @@
           "system": "SNOMED-CT",
           "code": "248279007",
           "display": "Frailty [vocab query — OMOP 4086506]"
+        }
+      ],
+      "direct_transition": "Cov_ADLBathing_Onset"
+    },
+    "Cov_ADLBathing_Onset": {
+      "type": "ConditionOnset",
+      "remarks": [
+        "SNOMED-CT 129043005 'Dependent for bathing' -> OMOP 4044722 (Observation) [vocab query — 2026-10-11].",
+        "In the Dependent Functional Status - Observation domain concept set of pad-amp-nhd-val",
+        "cohort 9100026 (revised mFI-5 fs_dep), which the older impaired-mobility / frailty",
+        "codes above do NOT reach. Emitted for every fs_dep-positive patient."
+      ],
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "129043005",
+          "display": "Dependent for bathing [vocab query — OMOP 4044722]"
+        }
+      ],
+      "direct_transition": "Cov_ADLDressing_Onset"
+    },
+    "Cov_ADLDressing_Onset": {
+      "type": "ConditionOnset",
+      "remarks": [
+        "SNOMED-CT 129065005 'Dependent for dressing' -> OMOP 4043532 (Observation) [vocab query — 2026-10-11].",
+        "In the Dependent Functional Status - Observation domain concept set of pad-amp-nhd-val",
+        "cohort 9100026 (revised mFI-5 fs_dep), which the older impaired-mobility / frailty",
+        "codes above do NOT reach. Emitted for every fs_dep-positive patient."
+      ],
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "129065005",
+          "display": "Dependent for dressing [vocab query — OMOP 4043532]"
+        }
+      ],
+      "direct_transition": "Cov_ADLWalking_Onset"
+    },
+    "Cov_ADLWalking_Onset": {
+      "type": "ConditionOnset",
+      "remarks": [
+        "SNOMED-CT 427512004 'Dependent for walking' -> OMOP 4146424 (Observation) [vocab query — 2026-10-11].",
+        "In the Dependent Functional Status - Observation domain concept set of pad-amp-nhd-val",
+        "cohort 9100026 (revised mFI-5 fs_dep), which the older impaired-mobility / frailty",
+        "codes above do NOT reach. Emitted for every fs_dep-positive patient."
+      ],
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "427512004",
+          "display": "Dependent for walking [vocab query — OMOP 4146424]"
         }
       ],
       "direct_transition": "Cov_AmbuAid_Check"
