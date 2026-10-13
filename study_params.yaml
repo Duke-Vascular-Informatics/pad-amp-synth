@@ -34,13 +34,12 @@ study_name: "pad_amp_dispo_synth"   # data-generation-only repo: PAD major-amput
 # =============================================================================
 # CDM schema populated by workflow/05 (the ETL). Must be set explicitly: the CDM
 # is a shared dataset, so it cannot be derived from study_name.
-cdm_schema: "omop_synth_pad_amp_dispo"   # PINNED name (deliberately not tied to this repo's own _synth suffix):
-                                          # this physical schema is registered in ../synthetic_data/registry.yaml
-                                          # (dataset id: pad_amp). Renamed 2026-07-31 from omop_synth_pad_amp_ed_desc;
-                                          # see CLAUDE.md "Schema naming". v2 of the dataset lives in
-                                          # omop_synth_pad_amp_v2 (pass --cdm_schema=omop_synth_pad_amp_v2 to the QC
-                                          # scripts to check it). Populated by workflow/05; rebuild each consumer's
-                                          # overlay after any regeneration.
+cdm_schema: "omop_synth_pad_amp_v3"   # CURRENT VERSION of dataset id pad_amp, the schema workflow/05 builds and
+                                       # Step 6 checks by default. CHANGED 2026-10-11 from omop_synth_pad_amp_dispo (v1).
+                                       # Versions are never rebuilt in place (see ../synthetic_data/registry.yaml): v1 is
+                                       # omop_synth_pad_amp_dispo and v2 is omop_synth_pad_amp_v2, both pinned by consumers.
+                                       # To check an older version pass --cdm_schema=<schema> to the QC scripts.
+                                       # Rebuild each consumer's overlay after any regeneration.
 
 # Optional. Results schema (Achilles / DQD output and QC scratch tables) defaults
 # to <study_name>_results. Uncomment only for a non-standard name.
