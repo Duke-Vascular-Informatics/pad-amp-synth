@@ -135,7 +135,13 @@ vocab_delimiter <- "\t"
 # Fresh CDM schema used only for ETLSyntheaBuilder-driven table lifecycle.
 # Derived from cfg$study_name after config loads: omop_synth_<study_name>.
 # Set to a non-NULL string here only to override the derived value.
-target_cdm_schema_base <- "omop_synth_pad_amp_v2"  # v2 — VERSIONED target.
+target_cdm_schema_base <- "omop_synth_pad_amp_v3"  # v3 — VERSIONED target.
+  # CHANGED 2026-10-11 for pad_amp v3 (module now emits the concepts the Falls, weight-loss and
+  # functional-status cohorts include). v2 (omop_synth_pad_amp_v2) is pinned by pad-bka-aka-prog,
+  # pad-amp-ed-desc, pad-amp-nhd-prog and pad-amp-nhd-val and must never be rebuilt in place;
+  # the interlock below refuses it. Point this at the NEXT version, never back at v2.
+  #
+  # (Previous v2 note, kept for history:)
   # CHANGED 2026-08-06 for pad_amp v2. The registry's versions: scheme requires a
   # NEW physical schema per version rather than an in-place regeneration, because
   # pad-amp-ed-desc and pad-amp-nhd-prog are PINNED to v1
