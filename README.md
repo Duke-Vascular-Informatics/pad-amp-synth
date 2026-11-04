@@ -20,6 +20,24 @@ for dysvascular, diabetic, or wound indications, carrying:
 The dataset is authored as a single Synthea disease module
 (`synthea/modules/pad_amp_dispo.json`) and materialized into SQL Server via ETL.
 
+## Published data (v3)
+
+The dataset that the study code was developed against is published, so the chain
+**article → analysis repo → this repo → data** can be followed end to end:
+
+| What | Where |
+|---|---|
+| Data (13 OMOP CDM v5.4 clinical tables + `cdm_source`, CSV in one zip) | GitHub release [`synth-data-pad_amp-v3`](https://github.com/Duke-Vascular-Informatics/pad-amp-synth/releases/tag/synth-data-pad_amp-v3), asset `pad_amp_clinical_tables.zip` |
+| Integrity | SHA-256 `9c402386f251a24d79da6251b89b121890c900141cd502d4191ccf82a937254f` |
+| This repo, archived at that release | Zenodo DOI [10.5281/zenodo.23955868](https://doi.org/10.5281/zenodo.23955868) (all versions: [10.5281/zenodo.23955867](https://doi.org/10.5281/zenodo.23955867)) |
+| Data license | CC BY 4.0 (`DATA_LICENSE.md`, attached to the release); generator code is GPL-2.0-only |
+| Study that was developed against it | [`pad-amp-nhd-val`](https://github.com/Duke-Vascular-Informatics/pad-amp-nhd-val), which logs this release tag and checksum at the start of every run |
+
+The data is fully synthetic, contains no vocabulary tables (load your own OMOP
+vocabulary), and its random seed was not recorded, so regenerating does **not**
+reproduce it: the release asset is the only copy of v3. No result in any manuscript
+comes from this dataset.
+
 ## Who consumes it
 
 The resulting CDM schema (`omop_synth_pad_amp_dispo`; v2 in `omop_synth_pad_amp_v2`) is consumed by
