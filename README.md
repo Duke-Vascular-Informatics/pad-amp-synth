@@ -99,6 +99,14 @@ pad-amp-synth/
 - Workspace setup (Docker, SQL Server, OMOP vocabulary, dev container) is documented in the
   root `charon` README and `../docs/`.
 
+## Development environment
+
+Developed in an institution-specific configuration of the
+[Charon](https://github.com/Duke-Vascular-Informatics/charon) container
+(*Containerized HADES Analytics for Research in OHDSI Networks*, v1.2.1,
+DOI [10.5281/zenodo.23874907](https://doi.org/10.5281/zenodo.23874907)); please cite it too:
+Johnson AP. Charon [software]. Zenodo; 2026.
+
 ## License & Funding
 
 Copyright 2026 Duke University. All Rights Reserved. The software is hereby licensed under the GNU GPL License v2 (see [LICENSE](LICENSE)). OMOP vocabulary files are subject to the
