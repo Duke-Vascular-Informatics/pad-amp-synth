@@ -101,7 +101,11 @@ pad-amp-synth/
 
 ## License & Funding
 
-Copyright 2026 Duke University. All Rights Reserved. The software is hereby licensed under the GNU GPL License v2 (see [LICENSE](LICENSE)).
+Copyright 2026 Duke University. All Rights Reserved. The software is hereby licensed under the GNU GPL License v2 (see [LICENSE](LICENSE)). OMOP vocabulary files are subject to the
+[Athena license terms](https://www.ohdsi.org/analytic-tools/athena-standardized-vocabularies/). No vocabulary data is distributed in this repo or in the published data.
+
+The **published synthetic data** (release `synth-data-pad_amp-v3`) is licensed separately, under
+**CC BY 4.0** (`DATA_LICENSE.md`, attached to the release); the GPL v2 applies to the code only.
 
 This repo vendors [Synthea](https://github.com/synthetichealth/synthea) (Copyright
 2017-2025 The MITRE Corporation) at `external/synthea/`, an independently developed,
@@ -113,7 +117,7 @@ Synthea's own `LICENSE` and `NOTICE` files are preserved unmodified in
 affiliated with Duke University; see the upstream project for its own terms,
 attribution requirements, and citation.
 
-Research reported here was supported by the National Center for Advancing Translational
-Sciences of the National Institutes of Health under Award Number K12TR005435. The content is
-solely the responsibility of the authors and does not necessarily represent the official views
-of the National Institutes of Health.
+Research reported in this publication was supported by the National Center For Advancing
+Translational Sciences of the National Institutes of Health under Award Number K12TR005435.
+The content is solely the responsibility of the authors and does not necessarily represent
+the official views of the National Institutes of Health.
